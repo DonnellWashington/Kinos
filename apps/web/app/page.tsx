@@ -1,15 +1,25 @@
 export default function Home() {
   return (
-    <main className="flex min-h-screen items-center justify-center bg-gray-50">
-      <div className="text-center space-y-4">
-        <h1 className="text-4xl font-bold">Kinos</h1>
-        <p className="text-gray-600">
-          Private family health, safety, and connection
-        </p>
-        <button className="px-6 py-2 rounded bg-black text-white">
+    <section className="flex flex-col items-center justify-center text-center py-24">
+      <h1 className="text-5xl font-bold mb-6">Welcome to Kinos</h1>
+      <p className="max-w-xl text-lg text-gray-600 mb-8">
+        A private family platform for health, safety, and connection.
+      </p>
+
+      <div className="space-x-4">
+        <a
+          href="/signup"
+          className="px-6 py-3 bg-black text-white rounded-lg"
+        >
           Get Started
-        </button>
+        </a>
+        <a
+          href="/login"
+          className="px-6 py-3 border rounded-lg"
+        >
+          Login
+        </a>
       </div>
-    </main>
-  )
+    </section>
+  );
 }

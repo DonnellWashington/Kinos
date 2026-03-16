@@ -1,39 +1,31 @@
-'use client'
-
-import AuthGuard from '@/src/components/AuthGuard'
-import FamilyMembersRow from '@/src/components/dashboard/FamilyMembersRow'
-import DashboardActions from '@/src/components/dashboard/DashboardActions'
-import NotificationsPanel from '@/src/components/dashboard/NotificationsPanel'
+import FamilyMembersRow from "@/src/components/dashboard/FamilyMembersRow";
+import FeatureCardsRow from "@/src/components/dashboard/FeatureCardsRow";
 
 export default function DashboardPage() {
   return (
-    <AuthGuard>
-      <div className="p-6 space-y-8">
-        {/* Header */}
-        <header>
-          <h1 className="text-3xl font-bold">Family Dashboard</h1>
-          <p className="text-gray-500 mt-1">
-            Stay connected, informed, and safe.
+    <div className="h-[calc(100vh-64px)] overflow-y-scroll snap-y snap-mandatory">
+      
+      {/* PAGE 1 — Family Section */}
+      <section className="h-full snap-start p-6 flex flex-col justify-start pt-6">
+        <h1 className="text-3xl font-bold mb-4">Your Family</h1>
+        <FamilyMembersRow />
+
+        {/* Placeholder under family cards */}
+        <div className="mt-6 p-4 bg-kinos-card dark:bg-white rounded-xl shadow-md text-[var(--text-color)] dark:text-white transition-colors duration-300">
+          <p className="text-sm">
+            Family insights and notifications will appear here.
           </p>
-        </header>
+        </div>
+      </section>
 
-        {/* Family Members */}
-        <section>
-          <h2 className="text-xl font-semibold mb-3">Family Members</h2>
-          <FamilyMembersRow />
-        </section>
+      {/* PAGE 2 — Features Section */}
+      <section className="h-full snap-start p-6 flex flex-col justify-start pt-6">
+        <FeatureCardsRow />
+        <div className="mt-6 p-4 bg-kinos-card dark:bg-white rounded-xl shadow-md text-[var(--text-color)] dark:text-black transition-colors duration-300">
+  <p className="text-sm">Additional family features and insights will appear here.</p>
+</div>
+      </section>
 
-        {/* Notifications */}
-        <section>
-          <h2 className="text-xl font-semibold mb-3">Notifications</h2>
-          <NotificationsPanel />
-        </section>
-
-        {/* Actions */}
-        <section>
-          <DashboardActions />
-        </section>
-      </div>
-    </AuthGuard>
-  )
+    </div>
+  );
 }

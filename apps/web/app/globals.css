@@ -1,4 +1,8 @@
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 
 :root {
   --kinos-bg: #1a1a1a;        /* dark background */
@@ -6,4 +10,25 @@
   --kinos-brown: #4B3621;     /* rich dark brown accent */
   --kinos-terra: #C68B59;     /* secondary accent */
   --kinos-card: #2a2a2a;      /* slightly lighter dark panel */
+}
+
+/* Dark mode variables */
+.dark {
+  --bg-color: #000000;
+  --text-color: #ffffff;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Scrollbar hide utility */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
 }
